@@ -24,19 +24,20 @@ class ContactForm extends Component {
 
   _handleFormSubmit = (e) => {
     e.preventDefault();
-    this.props.saveContact(this.state)
+    this.props.saveContact(this.state);
+    this.setState({ firstName: '', lastName: '', phone: '' });
   }
 
   render() {
     return (
       <div>
-        <h4 className="text-center">Nuevo Contacto</h4>
+        <h3 className="text-center" style={{ paddingBottom: '20px', margin: 0 }}>Nuevo Contacto</h3>
         <form onSubmit={this._handleFormSubmit}>
           <div className="form-group row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <label htmlFor="name">Nombre:</label>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-9">
               <input
                 id="name"
                 type="text"
@@ -47,10 +48,10 @@ class ContactForm extends Component {
             </div>
           </div>
           <div className="form-group row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <label htmlFor="lastname">Apellido:</label>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-9">
               <input
                 id="lastname"
                 type="text"
@@ -61,10 +62,10 @@ class ContactForm extends Component {
             </div>
           </div>
           <div className="form-group row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <label htmlFor="phone">Teléfono:</label>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-9">
               <input 
                 id="phone" 
                 type="text" 
@@ -74,7 +75,9 @@ class ContactForm extends Component {
               />
             </div>
           </div>
-          <button className="btn btn-primary">Guardar</button>
+          <div className="text-center">
+            <button className="btn btn-primary">Guardar</button>
+          </div>
         </form>
       </div>
     );

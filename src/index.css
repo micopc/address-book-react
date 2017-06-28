@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.header, .footer {
+  padding: 15px 0;
+}
+
+.header {
+  background-color: #2a2730;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #fff;
+  margin: 0;
+}

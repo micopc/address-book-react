@@ -9,6 +9,8 @@ import SearchBox from './components/SearchBox';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 
+const API_URL = 'https://address-book-api-kfpkaqtghu.now.sh';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,10 +28,10 @@ class App extends Component {
     this.setState({ searchText: e.target.value });
   }
 
-  _getContacts() {
+  _getContacts = () => {
     axios({
       method: 'GET',
-      url: 'https://address-book-whpannunjj.now.sh/api/contacts',
+      url: API_URL + '/api/contacts',
       headers: {
         'Api-Key': '1720074127',
       },
@@ -45,7 +47,7 @@ class App extends Component {
   _saveContact = (contact) => {
     axios({
       method: 'POST',
-      url: 'https://address-book-whpannunjj.now.sh/api/contacts',
+      url: API_URL + '/api/contacts',
       headers: {
         'Api-Key': '1720074127',
         'Content-Type': 'application/json',
@@ -76,7 +78,7 @@ class App extends Component {
     });
 
     return (
-      <div className="container-fluid">
+      <div className="app">
         <Header title="Address Book" />
         <div className="container">
           <div className="row">
